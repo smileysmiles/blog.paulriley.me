@@ -1,7 +1,7 @@
 <template>
   <div id="menu">
       <div v-for="(item, index) in menuitems">
-        <router-link :to="item.linkslug">
+        <router-link v-if="(hasPermission(item))" :to="item.linkslug">
           <div class="menuitem">
             <p>{{ item.title }}</p>
           </div>
@@ -11,15 +11,25 @@
 </template>
 <script>
   import { butter } from '@/buttercms'
+  import { Auth } from 'aws-amplify'
+  import { AmplifyEventBus } from 'aws-amplify-vue';
 
   export default{
     name: 'mainmenu',
+    props:['signedIn'],
     data(){
       return {
         menuitems:[]
       }
     },
     methods:{
+      hasPermission(item){
+        console.log(item.auth)
+        if (!item.auth || (item.auth && this.signedIn))
+          return true;
+        else
+          return false;
+      },
       getMenu(){
         butter.content.retrieve(['mainmenu'])
           .then((res) => {
@@ -30,7 +40,7 @@
           })
         }
       },
-    created(){
+        created(){
       this.getMenu()
     }
   }
