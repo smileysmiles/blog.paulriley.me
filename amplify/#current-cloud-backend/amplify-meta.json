@@ -1,0 +1,35 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "buttercmsblog-20190108122039-authRole",
+			"UnauthRoleArn": "arn:aws:iam::387856001214:role/buttercmsblog-20190108122039-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::387856001214:role/buttercmsblog-20190108122039-authRole",
+			"Region": "eu-west-2",
+			"DeploymentBucketName": "buttercmsblog-20190108122039-deployment",
+			"UnauthRoleName": "buttercmsblog-20190108122039-unauthRole",
+			"StackName": "buttercmsblog-20190108122039",
+			"StackId": "arn:aws:cloudformation:eu-west-2:387856001214:stack/buttercmsblog-20190108122039/cf61a0a0-133f-11e9-a71d-0a4e95df1c9a"
+		}
+	},
+	"auth": {
+		"cognito3b4f2cc9": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/buttercmsblog-20190108122039-deployment/amplify-cfn-templates/auth/cognito3b4f2cc9-cloudformation-template.yml",
+				"logicalId": "authcognito3b4f2cc9"
+			},
+			"lastPushTimeStamp": "2019-01-08T12:26:42.889Z",
+			"output": {
+				"AppClientSecret": "1hif4ot6rterdmv4sbalf19bpigue4duckmrl8ck03bit7k3lptq",
+				"UserPoolId": "eu-west-2_F0TnghJoe",
+				"AppClientIDWeb": "g071sp7e3t7ppl19opv8s0q3v",
+				"AppClientID": "766otkm3fpr21jiefan6t95m66",
+				"IdentityPoolId": "eu-west-2:fd637211-d892-45e3-8e41-ba7792063225",
+				"IdentityPoolName": "cognito3b4f2cc9_identitypool_3b4f2cc9",
+				"UserPoolName": "cognito3b4f2cc9_userpool_3b4f2cc9"
+			},
+			"lastPushDirHash": "j/mwOAPT21MYA31CpM04vFXpIks="
+		}
+	}
+}
